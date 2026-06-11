@@ -1,0 +1,18 @@
+# Python virtual environments
+.venv/
+venv/
+ENV/
+
+# Python cache files
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Hypervisor disk images and metadata
+*.vdi
+*.vbox
+*.vbox-prev
+*.vmdk
+*.vhd
+*.vhdx
