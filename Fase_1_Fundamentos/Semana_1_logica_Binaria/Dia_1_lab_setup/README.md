@@ -27,4 +27,4 @@ flowchart TB
     AgregarUltimo --> Retornar
     Retornar --> Fin(["FIN DE LA FUNCIÓN"])
 ```
-    ValidarBarra@{ shape: diamond}
+   
