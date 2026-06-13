@@ -4,7 +4,8 @@ def verificar_exclusiones(patron, ruta):
     letras_patron = 0
     patron_limpio = ""
     extension_acomparar = ""
-
+    i = letras_patron
+    j = letras_ruta
     for contar in ruta:
         letras_ruta += 1
         direccion_ruta.append(contar)
@@ -14,14 +15,13 @@ def verificar_exclusiones(patron, ruta):
             letras_patron += 1
             patron_limpio += contar
 
-    while letras_patron >= 0:
-        extension_acomparar = direccion_ruta[letras_ruta - letras_patron]
-        letras_patron -= 1
+    while j >= 0:
+        if direccion_ruta[i] != patron_limpio[j]:
+            return False
+        else:
+            i -= 1
+            j -= 1
+            return True
 
-    if extension_acomparar == patron_limpio:
-        return True
-    else:
-        return False
 
-
-verificar_exclusiones("*.pyc", "fase_1/__pycache__/main.pyc")
+verificar_exclusiones("*.pyc", "fase_1 / __pycache__ / main.pyc")
