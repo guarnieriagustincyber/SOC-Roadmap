@@ -1,27 +1,30 @@
 def verificar_exclusiones(patron, ruta):
-    letras_ruta = 0
-    direccion_ruta = []
-    letras_patron = 0
+    
+
+    largo_ruta = 0
+    for caracter in ruta:
+        largo_ruta += 1
+        
+
     patron_limpio = ""
-    extension_acomparar = ""
-    i = letras_patron
-    j = letras_ruta
-    for contar in ruta:
-        letras_ruta += 1
-        direccion_ruta.append(contar)
+    largo_patron = 0
+    for caracter in patron:
+        if caracter != "*":
+            largo_patron += 1
+            patron_limpio += caracter
+            
+    i = largo_patron - 1
+    j = largo_ruta - 1 
 
-    for contar in patron:
-        if contar != "*":
-            letras_patron += 1
-            patron_limpio += contar
 
-    while j >= 0:
-        if direccion_ruta[i] != patron_limpio[j]:
+    while i >= 0:
+        if ruta[j] != patron_limpio[i]:
             return False
-        else:
-            i -= 1
-            j -= 1
-            return True
+        i -= 1
+        j -= 1
+        
+    return True
 
 
-verificar_exclusiones("*.pyc", "fase_1 / __pycache__ / main.pyc")
+print("Caso 1 (Debería ser True):", verificar_exclusiones("*.pyc", "fase_1/__pycache__/main.pyc"))
+print("Caso 2 (Debería ser False):", verificar_exclusiones("*.pyc", "fase_1/main.py"))
