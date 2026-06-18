@@ -1,1 +1,1 @@
-cursor = cursor["var"]
+            print("pq no entra al while?")
