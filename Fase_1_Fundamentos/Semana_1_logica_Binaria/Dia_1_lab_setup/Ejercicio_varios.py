@@ -1,13 +1,29 @@
-# Estado objetivo deseado: {"var": {"log": {"auth": {}}}}
-estructura = {}
-cursor = estructura
+# red = {"nodo": "gateway", "siguiente": {}}
+# cursor = red
+# cursor = cursor["siguiente"]
+# cursor["nodo"] = {}
+# cursor["nodo"] = "siwcht_core"
+# cursor["intefaz"] = "eth0"
 
-# Paso 1: Crear 'var'
-cursor["var"] = {}
-cursor = cursor["var"]
 
-# Paso 2: Intento erróneo de avanzar creando 'log'
-# El programador escribe esto pensando que encadena:
-cursor = {"log": {}}
+# print(red)
+Lista = ["var", "log"]
 
-print(estructura)
+raiz = {}
+
+
+def diccionarios(lista):
+    cursor = raiz
+    for elementos in lista:
+
+        if elementos not in cursor:
+            cursor[elementos] = {}
+        cursor = cursor[elementos]
+    if "_count" not in cursor:
+        cursor["_count"] = 1
+    else:
+        cursor["_count"] += 1
+    print(raiz)
+
+
+diccionarios(Lista)

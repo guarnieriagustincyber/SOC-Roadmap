@@ -1,1 +1,1 @@
-            print("pq no entra al while?")
+cursor = cursor["nodo"]
