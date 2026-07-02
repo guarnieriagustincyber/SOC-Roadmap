@@ -5,6 +5,7 @@ Restricción algorítmica: No puedes usar str.split('/'). Debes recorrer la cade
 Caso de prueba de control: segmentar_ruta("sys/logs/soc/alert.log") debe retornar ["sys", "logs", "soc", "alert.log"].
 
 ## resolución del Ejercicio 1 (Motor de Segmentación de Rutas) sin usar split
+
 ```mermaid
 ---
 config:
@@ -27,4 +28,3 @@ flowchart TB
     AgregarUltimo --> Retornar
     Retornar --> Fin(["FIN DE LA FUNCIÓN"])
 ```
-   
